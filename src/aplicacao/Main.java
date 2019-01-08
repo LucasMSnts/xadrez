@@ -5,9 +5,13 @@
  */
 package aplicacao;
 
+import tabuleiro.Posicao;
+
 public class Main {
     
     public static void main(String[] args){
-        System.out.println("teste");
+        
+        Posicao p = new Posicao(5, 3);
+        System.out.println(p);        
     }    
 }
