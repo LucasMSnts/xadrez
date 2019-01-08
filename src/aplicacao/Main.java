@@ -5,13 +5,13 @@
  */
 package aplicacao;
 
-import tabuleiro.Posicao;
+import jogoTabuleiro.Tabuleiro;
 
 public class Main {
     
     public static void main(String[] args){
         
-        Posicao p = new Posicao(5, 3);
-        System.out.println(p);        
+        Tabuleiro t = new Tabuleiro(8, 8);
+        
     }    
 }
