@@ -5,13 +5,14 @@
  */
 package aplicacao;
 
+import Xadrez.PartidaXadrez;
 import jogoTabuleiro.Tabuleiro;
 
 public class Main {
     
     public static void main(String[] args){
         
-        Tabuleiro t = new Tabuleiro(8, 8);
-        
+        PartidaXadrez partidaxz = new PartidaXadrez();
+        IU.printTabuleiro(partidaxz.getPecas());
     }    
 }
