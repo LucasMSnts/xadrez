@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/Xadrez/src/aplicacao/Main.java</file>
+            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/jogoTabuleiro/Tabuleiro.java</file>
+            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/Xadrez/PartidaXadrez.java</file>
+            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/Xadrez/Cor.java</file>
+            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/Xadrez/PecaXadrez.java</file>
+            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/aplicacao/Main.java</file>
+            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/jogoTabuleiro/Peca.java</file>
+            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/aplicacao/IU.java</file>
+            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/jogoTabuleiro/Posicao.java</file>
         </group>
     </open-files>
 </project-private>
