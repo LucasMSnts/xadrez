@@ -6,7 +6,6 @@
 package aplicacao;
 
 import Xadrez.PartidaXadrez;
-import jogoTabuleiro.Tabuleiro;
 
 public class Main {
     
