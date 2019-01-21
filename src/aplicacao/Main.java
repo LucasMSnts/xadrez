@@ -8,6 +8,8 @@ package aplicacao;
 import Xadrez.PartidaXadrez;
 import Xadrez.PecaXadrez;
 import Xadrez.xadrezPosicao;
+import Xadrez.xadrezException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -17,17 +19,23 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         PartidaXadrez partidaxz = new PartidaXadrez();
         
-        while(true){         
-            IU.printTabuleiro(partidaxz.getPecas());
-            System.out.println();
-            System.out.print("Origem: ");
-            xadrezPosicao origem = IU.lerPosicaoXadrez(sc);
-            
-            System.out.println();
-            System.out.print("Destino: ");
-            xadrezPosicao destino = IU.lerPosicaoXadrez(sc);
-            
-            PecaXadrez capturarPeca = partidaxz.perfomaceMovimentoXadrez(origem, destino);
+        while(true){     
+            try {
+                IU.limparTela();
+                IU.printTabuleiro(partidaxz.getPecas());
+                System.out.println();
+                System.out.print("Origem: ");
+                xadrezPosicao origem = IU.lerPosicaoXadrez(sc);
+
+                System.out.println();
+                System.out.print("Destino: ");
+                xadrezPosicao destino = IU.lerPosicaoXadrez(sc);
+
+                PecaXadrez capturarPeca = partidaxz.perfomaceMovimentoXadrez(origem, destino);
+            } catch (xadrezException | InputMismatchException e) {
+                System.out.println(e.getMessage());
+                sc.nextLine();
+            }
         }
     }    
 }

@@ -8,7 +8,7 @@ package Xadrez;
 import jogoTabuleiro.Peca;
 import jogoTabuleiro.Tabuleiro;
 
-public class PecaXadrez extends Peca{
+public abstract class PecaXadrez extends Peca{
     private Cor cor;
 
     public PecaXadrez(Cor cor, Tabuleiro tabuleiro) {
