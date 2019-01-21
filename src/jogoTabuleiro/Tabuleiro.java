@@ -14,7 +14,7 @@ public class Tabuleiro {
 
     public Tabuleiro(int linhas, int colunas) {
         if (linhas < 1 || colunas < 1){
-            throw new TabuleiroException("Erro ao criar o tabuleiro: é necessario ter pelo menos 1 linha e 1 coluna!");
+            throw new TabuleiroException("Erro ao criar o tabuleiro: eh necessario ter pelo menos 1 linha e 1 coluna!");
         }
         this.linhas = linhas;
         this.colunas = colunas;
@@ -31,21 +31,21 @@ public class Tabuleiro {
     
     public Peca peca(int linha, int coluna){
         if (!posicaoExistente(linha, coluna)){
-            throw new TabuleiroException("Posição não localizada no tabuleiro!");
+            throw new TabuleiroException("Posicao nao localizada no tabuleiro!");
         }
         return pecas[linha][coluna];
     }
     
     public Peca peca(Posicao posicao) {
         if (!posicaoExistente(posicao)){
-            throw new TabuleiroException("Posição não localizada no tabuleiro!");
+            throw new TabuleiroException("Posicao nao localizada no tabuleiro!");
         }
         return pecas[posicao.getLinha()][posicao.getColuna()];
     }
     
     public void lugarPeca(Peca p, Posicao pos){
         if(temPeca(pos)){
-            throw new TabuleiroException("Já existe peça nessa posição!");
+            throw new TabuleiroException("Ja existe peca nessa posicao!");
         }
         pecas[pos.getLinha()][pos.getColuna()] = p;
         p.posicao = pos;
@@ -53,7 +53,7 @@ public class Tabuleiro {
     
     public Peca removerPeca(Posicao pos){
         if(!posicaoExistente(pos)){
-            throw new TabuleiroException("Posição não localizada no tabuleiro!");
+            throw new TabuleiroException("Posicao nao localizada no tabuleiro!");
         }
         if(peca(pos) == null){
             return null;
@@ -74,7 +74,7 @@ public class Tabuleiro {
     
     public boolean temPeca(Posicao pos){
         if (!posicaoExistente(pos)){
-            throw new TabuleiroException("Posição não localizada no tabuleiro!");
+            throw new TabuleiroException("Posicao nao localizada no tabuleiro!");
         }
         return peca(pos) != null;
     }
