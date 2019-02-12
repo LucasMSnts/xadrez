@@ -22,7 +22,7 @@ public class Main {
         while(true){     
             try {
                 IU.limparTela();
-                IU.printTabuleiro(partidaxz.getPecas());
+                IU.printPartida(partidaxz);
                 System.out.println();
                 System.out.print("Origem: ");
                 xadrezPosicao origem = IU.lerPosicaoXadrez(sc);

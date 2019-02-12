@@ -6,6 +6,7 @@
 package aplicacao;
 
 import Xadrez.Cor;
+import Xadrez.PartidaXadrez;
 import Xadrez.PecaXadrez;
 import Xadrez.xadrezPosicao;
 import java.util.InputMismatchException;
@@ -61,6 +62,13 @@ public class IU {
             System.out.println();
         }
         System.out.println("  a b c d e f g h");
+    }
+    
+    public static void printPartida(PartidaXadrez partida){
+        printTabuleiro(partida.getPecas());
+        System.out.println("");
+        System.out.println("Turno: " + partida.getTurno());
+        System.out.println("Esperando Jogador: " + partida.getPlayerCor());
     }
     
     public static void printTabuleiro(PecaXadrez[][] pecas, boolean[][] possiveisMov) {
