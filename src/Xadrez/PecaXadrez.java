@@ -22,7 +22,7 @@ public abstract class PecaXadrez extends Peca{
     }  
     
     protected boolean temPecaAdversaria(Posicao pos){
-       PecaXadrez p = (PecaXadrez) getTabuleiro().peca(posicao);
+       PecaXadrez p = (PecaXadrez) getTabuleiro().peca(pos);
        return p != null && p.getCor() != cor;
     }
 }

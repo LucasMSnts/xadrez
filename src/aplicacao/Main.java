@@ -26,6 +26,10 @@ public class Main {
                 System.out.println();
                 System.out.print("Origem: ");
                 xadrezPosicao origem = IU.lerPosicaoXadrez(sc);
+                
+                boolean[][] movPossiveis = partidaxz.movimentosPossiveis(origem);
+                IU.limparTela();
+                IU.printTabuleiro(partidaxz.getPecas(), movPossiveis);
 
                 System.out.println();
                 System.out.print("Destino: ");
