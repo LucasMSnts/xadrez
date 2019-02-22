@@ -74,6 +74,9 @@ public class IU {
         System.out.println();
         System.out.println("Turno: " + partida.getTurno());
         System.out.println("Esperando Jogador: " + partida.getPlayerCor());
+        if (partida.getXeque()){
+            System.out.println("XEQUE!!!");
+        }
     }
     
     public static void printTabuleiro(PecaXadrez[][] pecas, boolean[][] possiveisMov) {
