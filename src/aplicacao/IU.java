@@ -38,13 +38,12 @@ public class IU {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
-    
     // https://stackoverflow.com/questions/2979383/java-clear-the-console
     public static void limparTela() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
-    
+
     public static xadrezPosicao lerPosicaoXadrez(Scanner sc) {
         try {
             String s = sc.nextLine();
@@ -66,19 +65,26 @@ public class IU {
         }
         System.out.println("  a b c d e f g h");
     }
-    
-    public static void printPartida(PartidaXadrez partida, List<PecaXadrez> capturados){
+
+    public static void printPartida(PartidaXadrez partida, List<PecaXadrez> capturados) {
         printTabuleiro(partida.getPecas());
         System.out.println();
         printPecasCapturadas(capturados);
         System.out.println();
         System.out.println("Turno: " + partida.getTurno());
-        System.out.println("Esperando Jogador: " + partida.getPlayerCor());
-        if (partida.getXeque()){
-            System.out.println("XEQUE!!!");
+        if (!partida.getXequeMate()) {
+            System.out.println("Esperando Jogador: " + partida.getPlayerCor());
+            if (partida.getXeque()) {
+                System.out.println("XEQUE!!!");
+            }
+        } else {
+            System.out.println("XEQUEMATE!");
+            System.out.println("Vencedor: " + partida.getPlayerCor());
         }
-    }
+        }
     
+    
+
     public static void printTabuleiro(PecaXadrez[][] pecas, boolean[][] possiveisMov) {
         for (int i = 0; i < pecas.length; i++) {
             System.out.print((8 - i) + " ");
@@ -105,17 +111,17 @@ public class IU {
         }
         System.out.print(" ");
     }
-    
-    private static void printPecasCapturadas(List<PecaXadrez> capturados){
+
+    private static void printPecasCapturadas(List<PecaXadrez> capturados) {
         List<PecaXadrez> branco = capturados.stream().filter(x -> x.getCor() == Cor.BRANCO).collect(Collectors.toList());
         List<PecaXadrez> preto = capturados.stream().filter(x -> x.getCor() == Cor.PRETO).collect(Collectors.toList());
-        
+
         System.out.println("Pecas Capturadas:");
         System.out.print("Brancas: ");
         System.out.print(ANSI_WHITE);
-        System.out.print(Arrays.toString(branco.toArray()));        
+        System.out.print(Arrays.toString(branco.toArray()));
         System.out.println(ANSI_RESET);
-        
+
         System.out.print("Pretas: ");
         System.out.print(ANSI_YELLOW);
         System.out.print(Arrays.toString(preto.toArray()));
