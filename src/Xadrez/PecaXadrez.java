@@ -11,6 +11,7 @@ import jogoTabuleiro.Posicao;
 
 public abstract class PecaXadrez extends Peca{
     private Cor cor;
+    private int movimentoConta;
 
     public PecaXadrez(Cor cor, Tabuleiro tabuleiro) {
         super(tabuleiro);
@@ -19,7 +20,19 @@ public abstract class PecaXadrez extends Peca{
 
     public Cor getCor() {
         return cor;
-    }  
+    } 
+    
+    public int getMovimentoConta() {
+        return movimentoConta;
+    }
+    
+    public void acrescentarMovimentoConta(){
+        movimentoConta++;
+    }
+    
+    public void desacrescentarMovimentoConta(){
+        movimentoConta--;
+    }
     
     public xadrezPosicao getXadrezPosicao(){
         return xadrezPosicao.fromPosicao(posicao);

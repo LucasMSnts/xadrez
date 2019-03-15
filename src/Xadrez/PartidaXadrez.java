@@ -5,6 +5,7 @@
  */
 package Xadrez;
 
+import Xadrez.pecas.Peao;
 import Xadrez.pecas.Rei;
 import Xadrez.pecas.Torre;
 import java.util.ArrayList;
@@ -87,9 +88,10 @@ public class PartidaXadrez {
     }    
     
     private Peca fazerMovimento(Posicao Origem, Posicao Destino){
-        Peca p = tabuleiro.removerPeca(Origem);
+        PecaXadrez p = (PecaXadrez)tabuleiro.removerPeca(Origem);
+        p.acrescentarMovimentoConta();
         Peca capturarPeca = tabuleiro.removerPeca(Destino);
-        tabuleiro.lugarPeca(p, Destino);
+        tabuleiro.lugarPeca(p, Destino); //faz um upcasting automaticamente
         
         if (capturarPeca != null){
             pecasNoTabuleiro.remove(capturarPeca);
@@ -100,7 +102,8 @@ public class PartidaXadrez {
     }
     
     private void desfazerMovimento(Posicao Origem, Posicao Destino, Peca pecaCapturada){
-        Peca p = tabuleiro.removerPeca(Destino);
+        PecaXadrez p = (PecaXadrez)tabuleiro.removerPeca(Destino);
+        p.desacrescentarMovimentoConta();
         tabuleiro.lugarPeca(p, Origem);
         
         if (pecaCapturada != null){
@@ -191,11 +194,28 @@ public class PartidaXadrez {
     
     private void iniciarSetup(){
                 
-        lugarNovoPeca('h', 7, new Torre(Cor.BRANCO, tabuleiro));
-        lugarNovoPeca('d', 1, new Torre(Cor.BRANCO, tabuleiro));
+        lugarNovoPeca('a', 1, new Torre(Cor.BRANCO, tabuleiro));
+        lugarNovoPeca('h', 1, new Torre(Cor.BRANCO, tabuleiro));
         lugarNovoPeca('e', 1, new Rei(Cor.BRANCO, tabuleiro));
+        lugarNovoPeca('a', 2, new Peao(Cor.BRANCO, tabuleiro));
+        lugarNovoPeca('b', 2, new Peao(Cor.BRANCO, tabuleiro));
+        lugarNovoPeca('c', 2, new Peao(Cor.BRANCO, tabuleiro));
+        lugarNovoPeca('d', 2, new Peao(Cor.BRANCO, tabuleiro));
+        lugarNovoPeca('e', 2, new Peao(Cor.BRANCO, tabuleiro));
+        lugarNovoPeca('f', 2, new Peao(Cor.BRANCO, tabuleiro));
+        lugarNovoPeca('g', 2, new Peao(Cor.BRANCO, tabuleiro));
+        lugarNovoPeca('h', 2, new Peao(Cor.BRANCO, tabuleiro));
 
-        lugarNovoPeca('b', 8, new Torre(Cor.PRETO, tabuleiro));
-        lugarNovoPeca('a', 8, new Rei(Cor.PRETO, tabuleiro));
+        lugarNovoPeca('a', 8, new Torre(Cor.PRETO, tabuleiro));
+        lugarNovoPeca('e', 8, new Rei(Cor.PRETO, tabuleiro));
+        lugarNovoPeca('h', 8, new Torre(Cor.PRETO, tabuleiro));
+        lugarNovoPeca('a', 7, new Peao(Cor.PRETO, tabuleiro));
+        lugarNovoPeca('b', 7, new Peao(Cor.PRETO, tabuleiro));
+        lugarNovoPeca('c', 7, new Peao(Cor.PRETO, tabuleiro));
+        lugarNovoPeca('d', 7, new Peao(Cor.PRETO, tabuleiro));
+        lugarNovoPeca('e', 7, new Peao(Cor.PRETO, tabuleiro));
+        lugarNovoPeca('f', 7, new Peao(Cor.PRETO, tabuleiro));
+        lugarNovoPeca('g', 7, new Peao(Cor.PRETO, tabuleiro));
+        lugarNovoPeca('h', 7, new Peao(Cor.PRETO, tabuleiro));
     }
 }
