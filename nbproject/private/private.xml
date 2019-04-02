@@ -5,11 +5,9 @@
         <group>
             <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/jogoTabuleiro/Tabuleiro.java</file>
             <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/Xadrez/PartidaXadrez.java</file>
-            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/Xadrez/PecaXadrez.java</file>
+            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/Xadrez/pecas/Rei.java</file>
             <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/aplicacao/Main.java</file>
             <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/Xadrez/pecas/Peao.java</file>
-            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/Xadrez/pecas/Torre.java</file>
-            <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/aplicacao/IU.java</file>
             <file>file:/C:/Users/estagiario/Documents/NetBeansProjects/GITHUB/Xadrez/src/Xadrez/xadrezPosicao.java</file>
         </group>
     </open-files>
