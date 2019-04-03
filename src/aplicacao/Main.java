@@ -44,6 +44,12 @@ public class Main {
                     capturados.add(capturarPeca);
                 }
                 
+                if(partidaxz.getPromocao() != null) {
+                    System.out.println("Entre com a peca para a promocao: (B/C/T/Q) ");
+                    String tipo = sc.nextLine();
+                    partidaxz.recolocarPecaPromovida(tipo);
+                }
+                
             } catch (xadrezException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
